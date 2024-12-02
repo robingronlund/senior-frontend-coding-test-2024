@@ -1,0 +1,32 @@
+{
+  "name": "senior-frontend-codetest-2024",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "npx playwright test"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.13.5",
+    "@playwright/test": "^1.49.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.2"
+  }
+}
