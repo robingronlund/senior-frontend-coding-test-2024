@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
 `;
 
 const Main = styled.main`

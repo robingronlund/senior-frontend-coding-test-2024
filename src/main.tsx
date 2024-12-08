@@ -4,6 +4,7 @@ import { App } from './App.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { SearchProvider } from './features/movies/context/search.provider.tsx';
+import './index.css';
 
 const queryClient = new QueryClient({
   defaultOptions: {
