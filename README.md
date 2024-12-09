@@ -1,39 +1,63 @@
-# Cinematic-o
+## How to
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/robingronlund/senior-frontend-coding-test-2024.git
+   ```
+
+2. Navigate to the directory and install dependencies:
+
+   ```bash
+   cd senior-frontend-coding-test-2024 && npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Run tests:
+
+   ```bash
+   npm run test
+   ```
 
 ## Overview
 
-The _cinematic-o_ app is a simple app that allows a user to browse and search for movies from the [OMDb API](http://www.omdbapi.com/).
-The features are basic and are mostly there to be part of larger discussion points, please be advised when dwelving into the code!
+This is a simple app that lets users browse and search for movies using the [OMDb API](http://www.omdbapi.com/).
+The features are fairly basic and are primarily meant to serve as discussion points, so keep that in mind when reviewing the code or the UI.
 
 ### Features
 
-- Searching & Filtering
+- Searching
+- Filtering
+- Sorting
+- Layout switching
 - Basic routing
 
 ## Tech
 
-Besides what was part of the foundaton I've decided to add the following tooling and packages to help me develop _cinematic-o_
+In addition to the provided foundation, I’ve incorporated the following tools and libraries to help with development:
 
-- [react-router](https://reactrouter.com/home)
-- [react-query](https://tanstack.com/query/latest)
-- [axios](https://axios-http.com/)
+- [React Router](https://reactrouter.com/home) for navigation
+- [React Query](https://tanstack.com/query/latest) for managing API calls
+- [Axios](https://axios-http.com/) for HTTP requests
 
 ## Assumptions
 
-- That it's not going to be production ready
-- That there are no CI/CD or deployment pipelines needed.
-- Code quality tooling like sonarqube and test % gates are not needed
-- Basically anything that has to do with the overall architecture of the app that would otherwise be needed when going into a production environment.
+- The app is not intended to be production-ready.
+- There’s no need for CI/CD pipelines or deployment tools.
+- Tools like SonarQube or test coverage gates are not included.
+- I haven’t focused on production-level architecture or workflows.
+- Outdated packages or boilerplate tooling won’t be updated.
+- UI work and styling have been intentionally kept minimal.
 
-- I also won't be focusing on keeping any deprecated tooling up to date (i.e eslint for this project is currently deprecated)
+## Learnings & Intentions
 
-## Further development
+I chose not to use a component library, opting instead to keep the UI work minimal to save time and focus on the app’s core functionality. While it’s hard to leave the UI unfinished, it’s also a good test of efficiency—focusing on the parts that matter most.
 
-One of the reasonings I have for this projects is to allow for a further development, which I think is paramount to think about in the start of a project.
-Tackle complexity by laying a strong foundation is a good moto!
+I’ve also implemented a feature-driven project structure to reflect my thoughts on how to organize code effectively. Tackling complexity early or setting up a solid foundation to handle it later is something I value.
 
-Therefore I've decided to move towards a feature-driven design, inspired by "Screaming Architecture" by Uncle Bob.
-
-## Take aways
-
-Todo: I will fill in after I'm done to reflect on any possible adjustments that could have been made along the way.
+Working with Emotion.js was a bit of a shift for me since I’ve primarily used Tailwind CSS in recent years. While my approach with Emotion.js could be more refined, it was a great opportunity to explore something new.
