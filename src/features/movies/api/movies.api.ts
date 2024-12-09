@@ -13,9 +13,10 @@ export interface ApiResponse {
 
 interface Params {
   apikey: string;
-  s?: string;
   page?: number;
   type?: string;
+  plot?: string;
+  s?: string;
   i?: string;
   t?: string;
 }
@@ -49,10 +50,11 @@ export const searchMovies = async (
   };
 };
 
-export const getMovieById = async (id: string) => {
+export const getMovieById = async (id?: string) => {
   const params: Params = {
     apikey: apiKey,
     i: id,
+    plot: 'full',
   };
   const { data } = await axios.get<Movie>(`${baseUrl}`, { params });
 
