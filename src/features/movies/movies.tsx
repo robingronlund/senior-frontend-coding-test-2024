@@ -70,7 +70,7 @@ export const Movies = () => {
         </>
       )}
 
-      {isLoading && isFetchingNextPage && <Loader />}
+      {isLoading && isFetchingNextPage && <Loader aria-label='loader' />}
       {queryError ? (
         <ErrorMessage>{queryError.message}</ErrorMessage>
       ) : (

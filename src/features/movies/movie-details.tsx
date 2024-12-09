@@ -74,7 +74,9 @@ export const MovieDetails = () => {
             <MovieDetailsWrapper>
               <img src={movie.Poster} alt={movie.Title} />
               <TitleWrapper>
-                <Title>{movie.Title}</Title>
+                <Title>
+                  {movie.Title} ({movie.Year})
+                </Title>
                 <MoviePlotContainer>
                   <p>{movie.Plot}</p>
                 </MoviePlotContainer>

@@ -45,6 +45,7 @@ export const MoviesListItem = ({ movie }: MoviesListItemProps) => {
 
   return (
     <MoviesListItemWrapper
+      aria-label='movie-list-item'
       layout={layout}
       onClick={() => navigate(`/movies/${movie.imdbID}`)}
     >

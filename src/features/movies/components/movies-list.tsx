@@ -16,7 +16,7 @@ const MoviesListContainer = styled.div`
 `;
 
 export const MoviesList = ({ movies }: MoviesListProps) => (
-  <MoviesListContainer>
+  <MoviesListContainer aria-label='movie-list'>
     {movies.map((movie) => (
       <MoviesListItem key={movie.imdbID} movie={movie} />
     ))}

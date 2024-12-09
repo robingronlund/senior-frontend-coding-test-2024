@@ -59,7 +59,9 @@ export const SearchBar = () => {
         onChange={handleChange}
       />
       {displayError && (
-        <ErrorMessage>Please enter at least 3 characters.</ErrorMessage>
+        <ErrorMessage aria-label='error-message'>
+          Please enter at least 3 characters.
+        </ErrorMessage>
       )}
     </SearchInputWrapper>
   );
