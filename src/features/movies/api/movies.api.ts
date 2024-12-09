@@ -8,17 +8,39 @@ export interface ApiResponse {
   Search: Movie[];
   totalResults: string;
   Response: string;
+  Error?: string;
 }
 
-export const searchMovies = async (searchTerm: string, pageParam: number) => {
-  const { data } = await axios.get<ApiResponse>(`${baseUrl}`, {
-    params: {
-      apikey: apiKey,
-      s: searchTerm,
-      page: pageParam,
-      type: 'movie',
-    },
-  });
+interface Params {
+  apikey: string;
+  s?: string;
+  page?: number;
+  type?: string;
+  i?: string;
+  t?: string;
+}
+
+export const searchMovies = async (
+  searchTerm: string,
+  pageParam: number,
+  type: string
+) => {
+  const params: Params = {
+    apikey: apiKey,
+    s: searchTerm,
+    page: pageParam,
+  };
+
+  if (type !== 'all') {
+    params.type = type;
+  }
+
+  const { data } = await axios.get<ApiResponse>(`${baseUrl}`, { params });
+
+  if (data.Response === 'False') {
+    console.log(data.Error);
+    throw new Error(data.Error);
+  }
 
   return {
     movies: data.Search.filter((movie) => movie.Poster !== 'N/A'), // Filter out movies without a poster,
@@ -28,23 +50,21 @@ export const searchMovies = async (searchTerm: string, pageParam: number) => {
 };
 
 export const getMovieById = async (id: string) => {
-  const { data } = await axios.get<Movie>(`${baseUrl}`, {
-    params: {
-      apikey: apiKey,
-      i: id,
-    },
-  });
+  const params: Params = {
+    apikey: apiKey,
+    i: id,
+  };
+  const { data } = await axios.get<Movie>(`${baseUrl}`, { params });
 
   return data;
 };
 
 export const getMovieByTitle = async (title: string) => {
-  const { data } = await axios.get<Movie>(`${baseUrl}`, {
-    params: {
-      apikey: apiKey,
-      t: title,
-    },
-  });
+  const params: Params = {
+    apikey: apiKey,
+    t: title,
+  };
+  const { data } = await axios.get<Movie>(`${baseUrl}`, { params });
 
   return data;
 };
