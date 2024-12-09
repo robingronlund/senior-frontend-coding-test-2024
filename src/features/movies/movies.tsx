@@ -12,6 +12,7 @@ import { LayoutSwitch } from './components/layout-switch';
 import { sortMovies } from './utils/movie-filters';
 import { MovieContext } from './context/movies.context';
 import { useMovies } from './hooks/use-movies';
+import { ErrorMessage } from '../../shared/components/error-message';
 
 const LoadMoreWrapper = styled.div`
   display: flex;
@@ -19,10 +20,6 @@ const LoadMoreWrapper = styled.div`
   items-align: center;
   width: 100%;
   margin-top: 2rem;
-`;
-
-const ErrorMessage = styled.p`
-  color: salmon;
 `;
 
 const TotalStats = styled.p`
@@ -69,15 +66,12 @@ export const Movies = () => {
       {sortedMovies.length > 0 && (
         <TotalStats>A total of {totalResults} results</TotalStats>
       )}
-
       {isLoading && isFetchingNextPage && <Loader />}
-
       {queryError ? (
         <ErrorMessage>{queryError.message}</ErrorMessage>
       ) : (
         <MoviesList movies={sortedMovies} />
       )}
-
       {displayShowMoreButton && (
         <LoadMoreWrapper>
           <Button
