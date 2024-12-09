@@ -12,6 +12,7 @@ const MoviesListContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
+  width: 100%;
 `;
 
 export const MoviesList = ({ movies }: MoviesListProps) => (
