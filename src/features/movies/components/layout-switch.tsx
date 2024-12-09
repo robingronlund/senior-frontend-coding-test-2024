@@ -1,35 +1,41 @@
-import { IconButton } from '../../../shared/components/icon-button';
-import { ListIcon } from '../../../assets/icons/list-icon';
-import { GridIcon } from '../../../assets/icons/grid-icon';
-
 import styled from '@emotion/styled';
+import { Layout } from '../types/layout.types';
+import { useContext } from 'react';
+import { MovieContext } from '../context/movies.context';
 
 const SwitchContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 2rem;
-  margin-bottom: 1rem;
+  gap: 0.5rem;
   width: 100%;
+  margin-bottom: 1rem;
+
+  & p {
+    margin: 0;
+  }
 `;
 
-interface LayoutSwitchProps {
-  layout: 'grid' | 'list';
-  onLayoutChange: (layout: 'grid' | 'list') => void;
-}
+export const LayoutSwitch = () => {
+  const { layout, setLayout } = useContext(MovieContext);
 
-export const LayoutSwitch = ({ layout, onLayoutChange }: LayoutSwitchProps) => {
   return (
     <SwitchContainer>
-      {layout === 'list' ? (
-        <IconButton onClick={() => onLayoutChange('grid')}>
-          <GridIcon />
-        </IconButton>
-      ) : (
-        <IconButton onClick={() => onLayoutChange('list')}>
-          <ListIcon />
-        </IconButton>
-      )}
+      <p>Select layout: </p>
+      <label htmlFor='detailed-layout'>Detailed</label>
+      <input
+        type='radio'
+        name='detailed-layout'
+        value={Layout.Detailed}
+        checked={layout === Layout.Detailed}
+        onChange={() => setLayout(Layout.Detailed)}
+      />
+      <label htmlFor='layout-switch'>Compact</label>
+      <input
+        type='radio'
+        name='compact-layout'
+        value={Layout.Compact}
+        checked={layout === Layout.Compact}
+        onChange={() => setLayout(Layout.Compact)}
+      />
     </SwitchContainer>
   );
 };
