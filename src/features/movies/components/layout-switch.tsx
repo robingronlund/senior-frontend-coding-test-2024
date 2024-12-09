@@ -8,6 +8,7 @@ const SwitchContainer = styled.div`
   gap: 0.5rem;
   width: 100%;
   margin-bottom: 1rem;
+  justify-content: center;
 
   & p {
     margin: 0;

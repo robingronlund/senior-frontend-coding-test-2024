@@ -23,6 +23,7 @@ const LoadMoreWrapper = styled.div`
 `;
 
 const TotalStats = styled.p`
+  width: 100%;
   margin: 0;
 `;
 
@@ -56,16 +57,19 @@ export const Movies = () => {
     <>
       <Title>SEARCH MOVIES</Title>
       <SearchBar />
-      <FilterControls
-        currentSort={sortOrder}
-        currentFilter={filterType}
-        onFilterChange={(type) => setFilterType(type)}
-        onSortChange={(order) => setSortOrder(order)}
-      />
-      <LayoutSwitch />
       {sortedMovies.length > 0 && (
-        <TotalStats>A total of {totalResults} results</TotalStats>
+        <>
+          <FilterControls
+            currentSort={sortOrder}
+            currentFilter={filterType}
+            onFilterChange={(type) => setFilterType(type)}
+            onSortChange={(order) => setSortOrder(order)}
+          />
+          <LayoutSwitch />
+          <TotalStats>A total of {totalResults} results</TotalStats>
+        </>
       )}
+
       {isLoading && isFetchingNextPage && <Loader />}
       {queryError ? (
         <ErrorMessage>{queryError.message}</ErrorMessage>

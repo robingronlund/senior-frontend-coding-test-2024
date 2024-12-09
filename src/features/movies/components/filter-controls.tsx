@@ -11,7 +11,8 @@ interface FilterControlsProps {
 
 const FilterContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
   width: 100%;
